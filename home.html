@@ -1,0 +1,3183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
+
+<title>Kofkro LMIS | Home</title>
+
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+
+  background: #f3f2ef;
+
+  color: #172b4d;
+
+  line-height: 1.5;
+}
+
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+
+button {
+  cursor: pointer;
+}
+
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.main-header {
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 1000;
+
+  background: white;
+
+  border-bottom:
+    1px solid #ddd;
+
+}
+
+
+.header-inner {
+
+  max-width: 1180px;
+
+  height: 68px;
+
+  margin: auto;
+
+  padding: 0 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 25px;
+
+}
+
+
+/* LOGO */
+
+.brand {
+
+  font-size: 25px;
+
+  font-weight: 800;
+
+  color: #0a66c2;
+
+  white-space: nowrap;
+
+}
+
+
+.brand span {
+
+  color: #172b4d;
+
+}
+
+
+/* SEARCH */
+
+.header-search {
+
+  width: 320px;
+
+  height: 42px;
+
+  background: #eef3f8;
+
+  border-radius: 8px;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 0 12px;
+
+}
+
+
+.search-icon {
+
+  font-size: 24px;
+
+  color: #56687a;
+
+  margin-right: 8px;
+
+}
+
+
+.header-search input {
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  width: 100%;
+
+  font-size: 14px;
+
+}
+
+
+/* NAV */
+
+.main-nav {
+
+  margin-left: auto;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+}
+
+
+.nav-link {
+
+  min-width: 70px;
+
+  padding: 5px 8px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 2px;
+
+  color: #5e6b75;
+
+  font-size: 12px;
+
+  border-bottom: 2px solid transparent;
+
+}
+
+
+.nav-link:hover,
+.nav-link.active {
+
+  color: #172b4d;
+
+}
+
+
+.nav-icon {
+
+  font-size: 21px;
+
+}
+
+
+.logout-btn {
+
+  margin-left: 10px;
+
+  border: 1px solid #0a66c2;
+
+  background: white;
+
+  color: #0a66c2;
+
+  padding: 9px 18px;
+
+  border-radius: 20px;
+
+  font-weight: 600;
+
+}
+
+
+.logout-btn:hover {
+
+  background: #e8f3ff;
+
+}
+
+
+
+/* =====================================================
+   PAGE LAYOUT
+===================================================== */
+
+.page-container {
+
+  max-width: 1180px;
+
+  margin: 25px auto;
+
+  padding: 0 20px;
+
+  display: grid;
+
+  grid-template-columns:
+    220px
+    minmax(450px, 1fr)
+    280px;
+
+  gap: 20px;
+
+  align-items: start;
+
+}
+
+
+
+/* =====================================================
+   LEFT SIDEBAR
+===================================================== */
+
+.left-sidebar {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 15px;
+
+}
+
+
+.profile-card {
+
+  background: white;
+
+  border-radius: 9px;
+
+  overflow: hidden;
+
+  border: 1px solid #ddd;
+
+}
+
+
+.profile-cover {
+
+  height: 65px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #d9eaf7,
+      #b7d0e7
+    );
+
+}
+
+
+.profile-avatar {
+
+  width: 72px;
+
+  height: 72px;
+
+  margin-top: -35px;
+
+  margin-left: 20px;
+
+  border-radius: 50%;
+
+  background: #71869d;
+
+  border: 4px solid white;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: white;
+
+  font-size: 30px;
+
+  font-weight: 600;
+
+}
+
+
+.profile-content {
+
+  padding: 12px 18px 20px;
+
+}
+
+
+.profile-content h2 {
+
+  font-size: 19px;
+
+  color: #172b4d;
+
+  margin-bottom: 3px;
+
+}
+
+
+.profile-email {
+
+  color: #667788;
+
+  font-size: 12px;
+
+  word-break: break-word;
+
+}
+
+
+.profile-role {
+
+  color: #555;
+
+  font-size: 13px;
+
+  margin-top: 8px;
+
+  font-weight: 600;
+
+}
+
+
+.profile-button {
+
+  margin-top: 15px;
+
+  width: 100%;
+
+  padding: 8px;
+
+  border-radius: 18px;
+
+  border: 1px solid #0a66c2;
+
+  background: white;
+
+  color: #0a66c2;
+
+  font-weight: 600;
+
+}
+
+
+.profile-button:hover {
+
+  background: #e8f3ff;
+
+}
+
+
+
+/* SIDE MENU */
+
+.side-menu-card {
+
+  background: white;
+
+  border: 1px solid #ddd;
+
+  border-radius: 9px;
+
+  padding: 16px;
+
+}
+
+
+.side-menu-card h3 {
+
+  font-size: 15px;
+
+  margin-bottom: 12px;
+
+}
+
+
+.side-menu-card a {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 9px 4px;
+
+  color: #56687a;
+
+  font-size: 13px;
+
+}
+
+
+.side-menu-card a:hover {
+
+  color: #0a66c2;
+
+}
+
+
+
+/* =====================================================
+   MAIN FEED
+===================================================== */
+
+.main-feed {
+
+  min-width: 0;
+
+}
+
+
+.welcome-card {
+
+  background: white;
+
+  border: 1px solid #ddd;
+
+  border-radius: 9px;
+
+  padding: 28px;
+
+  margin-bottom: 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+}
+
+
+.welcome-small {
+
+  color: #0a66c2;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  margin-bottom: 7px;
+
+}
+
+
+.welcome-card h1 {
+
+  font-size: 27px;
+
+  line-height: 1.2;
+
+  margin-bottom: 9px;
+
+  color: #172b4d;
+
+}
+
+
+.welcome-card p {
+
+  color: #56687a;
+
+  font-size: 14px;
+
+}
+
+
+.welcome-button {
+
+  background: #0a66c2;
+
+  color: white;
+
+  padding: 11px 20px;
+
+  border-radius: 22px;
+
+  white-space: nowrap;
+
+  font-weight: 600;
+
+  font-size: 14px;
+
+}
+
+
+.welcome-button:hover {
+
+  background: #004182;
+
+}
+
+
+
+/* =====================================================
+   JOBS
+===================================================== */
+
+.jobs-section {
+
+  background: white;
+
+  border: 1px solid #ddd;
+
+  border-radius: 9px;
+
+  overflow: hidden;
+
+}
+
+
+.jobs-heading {
+
+  padding: 20px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  border-bottom: 1px solid #eee;
+
+}
+
+
+.jobs-heading h2 {
+
+  font-size: 20px;
+
+}
+
+
+.jobs-heading p {
+
+  color: #667788;
+
+  font-size: 13px;
+
+  margin-top: 2px;
+
+}
+
+
+.jobs-heading select {
+
+  padding: 9px 12px;
+
+  border: 1px solid #bbb;
+
+  border-radius: 7px;
+
+  background: white;
+
+  outline: none;
+
+}
+
+
+
+/* JOB CARD */
+
+.job-card {
+
+  padding: 20px;
+
+  border-bottom: 1px solid #eee;
+
+  display: grid;
+
+  grid-template-columns: 48px 1fr auto;
+
+  gap: 15px;
+
+  align-items: start;
+
+}
+
+
+.job-card:last-child {
+
+  border-bottom: none;
+
+}
+
+
+.job-logo {
+
+  width: 48px;
+
+  height: 48px;
+
+  background: #e8f3ff;
+
+  color: #0a66c2;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 21px;
+
+  font-weight: 700;
+
+  border-radius: 5px;
+
+}
+
+
+.job-content h3 {
+
+  color: #0a66c2;
+
+  font-size: 17px;
+
+  margin-bottom: 2px;
+
+}
+
+
+.job-content h3:hover {
+
+  text-decoration: underline;
+
+}
+
+
+.company {
+
+  color: #172b4d;
+
+  font-size: 13px;
+
+}
+
+
+.job-pills {
+
+  display: flex;
+
+  gap: 6px;
+
+  flex-wrap: wrap;
+
+  margin-top: 8px;
+
+}
+
+
+.job-pills span {
+
+  background: #eef3f8;
+
+  color: #56687a;
+
+  border-radius: 15px;
+
+  padding: 4px 9px;
+
+  font-size: 11px;
+
+}
+
+
+.description {
+
+  margin-top: 10px;
+
+  color: #56687a;
+
+  font-size: 13px;
+
+}
+
+
+.job-actions {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+
+  align-items: stretch;
+
+}
+
+
+.apply-btn {
+
+  background: #0a66c2;
+
+  color: white;
+
+  border-radius: 20px;
+
+  padding: 8px 18px;
+
+  text-align: center;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+
+}
+
+
+.apply-btn:hover {
+
+  background: #004182;
+
+}
+
+
+.remove-btn {
+
+  background: white;
+
+  color: #777;
+
+  border: 1px solid #aaa;
+
+  border-radius: 20px;
+
+  padding: 7px 15px;
+
+  font-size: 12px;
+
+}
+
+
+.remove-btn:hover {
+
+  background: #f5f5f5;
+
+}
+
+
+
+/* LOADING */
+
+.loading-box {
+
+  padding: 45px;
+
+  text-align: center;
+
+  color: #667788;
+
+}
+
+
+.loading-spinner {
+
+  width: 28px;
+
+  height: 28px;
+
+  border: 3px solid #ddd;
+
+  border-top-color: #0a66c2;
+
+  border-radius: 50%;
+
+  animation: spin 1s linear infinite;
+
+  margin: auto auto 10px;
+
+}
+
+
+@keyframes spin {
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+
+.empty {
+
+  padding: 40px 20px;
+
+  text-align: center;
+
+  color: #667788;
+
+}
+
+
+
+/* =====================================================
+   POST JOB
+===================================================== */
+
+.post-job-card {
+
+  margin-top: 20px;
+
+  background: white;
+
+  border: 1px solid #ddd;
+
+  border-radius: 9px;
+
+  padding: 25px;
+
+}
+
+
+.post-heading {
+
+  margin-bottom: 20px;
+
+}
+
+
+.post-heading h2 {
+
+  font-size: 20px;
+
+}
+
+
+.post-heading p {
+
+  color: #667788;
+
+  font-size: 13px;
+
+}
+
+
+#pf {
+
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 16px;
+
+}
+
+
+.form-group {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 6px;
+
+}
+
+
+.form-group.full-width {
+
+  grid-column: 1 / -1;
+
+}
+
+
+.form-group label {
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  color: #34495e;
+
+}
+
+
+.form-group label span {
+
+  color: #888;
+
+  font-weight: normal;
+
+}
+
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+
+  width: 100%;
+
+  border: 1px solid #b7b7b7;
+
+  border-radius: 6px;
+
+  padding: 11px;
+
+  outline: none;
+
+  background: white;
+
+}
+
+
+.form-group textarea {
+
+  resize: vertical;
+
+}
+
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+
+  border-color: #0a66c2;
+
+  box-shadow:
+    0 0 0 1px #0a66c2;
+
+}
+
+
+.form-actions {
+
+  grid-column: 1 / -1;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+}
+
+
+.post-button {
+
+  border: none;
+
+  background: #0a66c2;
+
+  color: white;
+
+  border-radius: 22px;
+
+  padding: 11px 25px;
+
+  font-weight: 600;
+
+}
+
+
+.post-button:hover {
+
+  background: #004182;
+
+}
+
+
+.success-message {
+
+  color: #287d3c;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+}
+
+
+
+/* =====================================================
+   RIGHT SIDEBAR
+===================================================== */
+
+.right-sidebar {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 15px;
+
+}
+
+
+.right-card {
+
+  background: white;
+
+  border: 1px solid #ddd;
+
+  border-radius: 9px;
+
+  padding: 18px;
+
+}
+
+
+.right-card h3 {
+
+  font-size: 16px;
+
+  margin-bottom: 15px;
+
+}
+
+
+.recent-job {
+
+  padding: 12px 0;
+
+  border-bottom: 1px solid #eee;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+
+}
+
+
+.recent-job:last-child {
+
+  border-bottom: none;
+
+}
+
+
+.recent-job strong {
+
+  color: #0a66c2;
+
+  font-size: 13px;
+
+}
+
+
+.recent-job span {
+
+  color: #667788;
+
+  font-size: 12px;
+
+}
+
+
+.view-all {
+
+  display: block;
+
+  margin-top: 12px;
+
+  color: #0a66c2;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+}
+
+
+.benefit {
+
+  display: flex;
+
+  gap: 10px;
+
+  margin-bottom: 17px;
+
+}
+
+
+.benefit-icon {
+
+  width: 25px;
+
+  height: 25px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #e8f3ff;
+
+  color: #0a66c2;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-weight: bold;
+
+}
+
+
+.benefit strong {
+
+  display: block;
+
+  font-size: 12px;
+
+}
+
+
+.benefit p {
+
+  color: #667788;
+
+  font-size: 11px;
+
+  margin-top: 3px;
+
+}
+
+
+.muted {
+
+  color: #777;
+
+  font-size: 13px;
+
+}
+
+
+.account-card p {
+
+  color: #777;
+
+  font-size: 12px;
+
+  margin-bottom: 3px;
+
+}
+
+
+.account-card strong {
+
+  display: block;
+
+  font-size: 14px;
+
+}
+
+
+.account-card span {
+
+  display: block;
+
+  color: #667788;
+
+  font-size: 12px;
+
+  word-break: break-word;
+
+}
+
+
+.secondary-button {
+
+  margin-top: 15px;
+
+  border: 1px solid #777;
+
+  background: white;
+
+  border-radius: 20px;
+
+  padding: 7px 15px;
+
+  font-size: 12px;
+
+}
+
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.site-footer {
+
+  margin-top: 40px;
+
+  background: white;
+
+  border-top: 1px solid #ddd;
+
+}
+
+
+.footer-inner {
+
+  max-width: 1180px;
+
+  margin: auto;
+
+  padding: 25px 20px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+}
+
+
+.footer-inner strong {
+
+  color: #0a66c2;
+
+}
+
+
+.footer-inner p {
+
+  color: #777;
+
+  font-size: 12px;
+
+  margin-top: 4px;
+
+}
+
+
+.footer-links {
+
+  display: flex;
+
+  gap: 20px;
+
+  align-items: center;
+
+}
+
+
+.footer-links a {
+
+  color: #667788;
+
+  font-size: 12px;
+
+}
+
+
+.footer-links a:hover {
+
+  color: #0a66c2;
+
+}
+
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1000px) {
+
+  .page-container {
+
+    grid-template-columns:
+      190px
+      1fr;
+
+  }
+
+
+  .right-sidebar {
+
+    display: none;
+
+  }
+
+
+  .header-search {
+
+    width: 250px;
+
+  }
+
+}
+
+
+@media (max-width: 750px) {
+
+  .header-inner {
+
+    height: auto;
+
+    min-height: 65px;
+
+    flex-wrap: wrap;
+
+    padding: 10px 15px;
+
+  }
+
+
+  .header-search {
+
+    order: 3;
+
+    width: 100%;
+
+  }
+
+
+  .main-nav {
+
+    gap: 3px;
+
+  }
+
+
+  .nav-link {
+
+    min-width: 50px;
+
+  }
+
+
+  .nav-link span:last-child {
+
+    display: none;
+
+  }
+
+
+  .logout-btn {
+
+    padding: 7px 12px;
+
+    font-size: 12px;
+
+  }
+
+
+  .page-container {
+
+    display: block;
+
+    margin-top: 15px;
+
+  }
+
+
+  .left-sidebar {
+
+    margin-bottom: 15px;
+
+  }
+
+
+  .side-menu-card {
+
+    display: none;
+
+  }
+
+
+  .profile-card {
+
+    display: flex;
+
+    align-items: center;
+
+  }
+
+
+  .profile-cover {
+
+    display: none;
+
+  }
+
+
+  .profile-avatar {
+
+    margin: 15px;
+
+    flex-shrink: 0;
+
+  }
+
+
+  .profile-content {
+
+    padding: 15px 15px 15px 0;
+
+  }
+
+
+  .profile-button {
+
+    margin-top: 7px;
+
+    width: auto;
+
+    padding: 5px 12px;
+
+  }
+
+
+  .welcome-card {
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+  }
+
+
+  #pf {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+  .form-group.full-width {
+
+    grid-column: auto;
+
+  }
+
+
+  .form-actions {
+
+    grid-column: auto;
+
+  }
+
+}
+
+
+@media (max-width: 550px) {
+
+  .header-inner {
+
+    gap: 10px;
+
+  }
+
+
+  .brand {
+
+    font-size: 21px;
+
+  }
+
+
+  .main-nav {
+
+    margin-left: auto;
+
+  }
+
+
+  .nav-link {
+
+    min-width: 35px;
+
+  }
+
+
+  .job-card {
+
+    grid-template-columns:
+      42px 1fr;
+
+  }
+
+
+  .job-logo {
+
+    width: 42px;
+
+    height: 42px;
+
+  }
+
+
+  .job-actions {
+
+    grid-column: 2;
+
+    flex-direction: row;
+
+  }
+
+
+  .jobs-heading {
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    flex-direction: column;
+
+  }
+
+
+  .footer-inner {
+
+    flex-direction: column;
+
+  }
+
+
+  .footer-links {
+
+    flex-wrap: wrap;
+
+  }
+
+}
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="main-header">
+
+  <div class="header-inner">
+
+
+    <a
+      href="/index.html"
+      class="brand"
+    >
+      Kofkro <span>LMIS</span>
+    </a>
+
+
+    <div class="header-search">
+
+      <span class="search-icon">
+        ⌕
+      </span>
+
+      <input
+        id="q"
+        type="search"
+        placeholder="Search jobs, companies or locations"
+      >
+
+    </div>
+
+
+    <nav class="main-nav">
+
+      <a
+        href="#jobs"
+        class="nav-link active"
+      >
+        <span class="nav-icon">⌂</span>
+        <span>Home</span>
+      </a>
+
+
+      <a
+        href="#jobs"
+        class="nav-link"
+      >
+        <span class="nav-icon">▣</span>
+        <span>Jobs</span>
+      </a>
+
+
+      <a
+        href="#post"
+        class="nav-link"
+      >
+        <span class="nav-icon">＋</span>
+        <span>Post Job</span>
+      </a>
+
+
+      <button
+        type="button"
+        id="logout"
+        class="logout-btn"
+      >
+        Sign out
+      </button>
+
+    </nav>
+
+  </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     PAGE
+===================================================== -->
+
+<main class="page-container">
+
+
+  <!-- ===================================================
+       LEFT
+  ==================================================== -->
+
+  <aside class="left-sidebar">
+
+
+    <section class="profile-card">
+
+      <div class="profile-cover"></div>
+
+
+      <div class="profile-avatar">
+
+        <span id="avatarLetter">
+          U
+        </span>
+
+      </div>
+
+
+      <div class="profile-content">
+
+        <h2 id="profileName">
+          Loading...
+        </h2>
+
+
+        <p
+          id="profileEmail"
+          class="profile-email"
+        >
+          Loading...
+        </p>
+
+
+        <p
+          id="profileRole"
+          class="profile-role"
+        >
+          Candidate
+        </p>
+
+
+        <button
+          type="button"
+          id="updateProfile"
+          class="profile-button"
+        >
+          Update profile
+        </button>
+
+      </div>
+
+    </section>
+
+
+
+    <section class="side-menu-card">
+
+      <h3>
+        My LMIS
+      </h3>
+
+
+      <a href="#jobs">
+        <span>▣</span>
+        Find jobs
+      </a>
+
+
+      <a href="#post">
+        <span>＋</span>
+        Post a job
+      </a>
+
+
+      <a href="#">
+        <span>★</span>
+        Saved jobs
+      </a>
+
+
+      <a href="#">
+        <span>◉</span>
+        My applications
+      </a>
+
+    </section>
+
+
+
+    <section class="side-menu-card">
+
+      <h3>
+        Account
+      </h3>
+
+
+      <a href="#">
+        Settings
+      </a>
+
+
+      <a href="/marketing.html">
+        About Kofkro LMIS
+      </a>
+
+    </section>
+
+  </aside>
+
+
+
+  <!-- ===================================================
+       CENTER
+  ==================================================== -->
+
+  <section class="main-feed">
+
+
+    <section class="welcome-card">
+
+      <div>
+
+        <p class="welcome-small">
+          WELCOME TO KOFKRO LMIS
+        </p>
+
+
+        <h1>
+          Find opportunities.
+          Build your future.
+        </h1>
+
+
+        <p>
+          Discover jobs, internships and
+          apprenticeships available in
+          Kofkro and surrounding communities.
+        </p>
+
+      </div>
+
+
+      <a
+        href="#jobs"
+        class="welcome-button"
+      >
+        Explore jobs
+      </a>
+
+    </section>
+
+
+
+    <section
+      class="jobs-section"
+      id="jobs"
+    >
+
+
+      <div class="jobs-heading">
+
+        <div>
+
+          <h2>
+            Job opportunities
+          </h2>
+
+          <p id="count">
+            Loading jobs...
+          </p>
+
+        </div>
+
+
+        <select id="ft">
+
+          <option value="">
+            All job types
+          </option>
+
+          <option value="Full-time">
+            Full-time
+          </option>
+
+          <option value="Part-time">
+            Part-time
+          </option>
+
+          <option value="Internship">
+            Internship
+          </option>
+
+          <option value="Apprenticeship">
+            Apprenticeship
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div id="jobs-list">
+
+        <div class="loading-box">
+
+          <div class="loading-spinner"></div>
+
+          <p>
+            Loading jobs...
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- POST JOB -->
+
+    <section
+      class="post-job-card"
+      id="post"
+    >
+
+      <div class="post-heading">
+
+        <h2>
+          Post a job
+        </h2>
+
+        <p>
+          Have an opportunity?
+          Share it with people in Kofkro.
+        </p>
+
+      </div>
+
+
+      <form id="pf">
+
+
+        <div class="form-group">
+
+          <label for="f-title">
+            Job title
+          </label>
+
+          <input
+            id="f-title"
+            type="text"
+            placeholder="e.g. Sales Assistant"
+            maxlength="80"
+            required
+          >
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="f-co">
+            Company / Organisation
+          </label>
+
+          <input
+            id="f-co"
+            type="text"
+            placeholder="e.g. Kofkro Market Traders"
+            maxlength="60"
+            required
+          >
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="f-loc">
+            Location
+          </label>
+
+          <input
+            id="f-loc"
+            type="text"
+            placeholder="e.g. Kofkro"
+            maxlength="60"
+            required
+          >
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="f-type">
+            Job type
+          </label>
+
+          <select
+            id="f-type"
+            required
+          >
+
+            <option value="">
+              Select job type
+            </option>
+
+            <option value="Full-time">
+              Full-time
+            </option>
+
+            <option value="Part-time">
+              Part-time
+            </option>
+
+            <option value="Internship">
+              Internship
+            </option>
+
+            <option value="Apprenticeship">
+              Apprenticeship
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="f-pay">
+            Pay / Stipend
+            <span>(optional)</span>
+          </label>
+
+          <input
+            id="f-pay"
+            type="text"
+            placeholder="e.g. GHS 1,500 per month"
+            maxlength="40"
+          >
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="f-mail">
+            Application email
+          </label>
+
+          <input
+            id="f-mail"
+            type="email"
+            placeholder="applications@example.com"
+            maxlength="160"
+            required
+          >
+
+        </div>
+
+
+        <div class="form-group full-width">
+
+          <label for="f-desc">
+            Job description
+          </label>
+
+          <textarea
+            id="f-desc"
+            rows="6"
+            maxlength="800"
+            placeholder="Describe the job, responsibilities and requirements..."
+            required
+          ></textarea>
+
+        </div>
+
+
+        <div class="form-actions">
+
+          <button
+            type="submit"
+            class="post-button"
+          >
+            Post job
+          </button>
+
+
+          <p
+            id="ok"
+            class="success-message"
+            style="display:none;"
+          >
+            ✓ Job posted successfully.
+          </p>
+
+        </div>
+
+      </form>
+
+    </section>
+
+
+  </section>
+
+
+
+  <!-- ===================================================
+       RIGHT
+  ==================================================== -->
+
+  <aside class="right-sidebar">
+
+
+    <section class="right-card">
+
+      <h3>
+        Latest opportunities
+      </h3>
+
+
+      <div id="recentJobs">
+
+        <p class="muted">
+          Loading...
+        </p>
+
+      </div>
+
+
+      <a
+        href="#jobs"
+        class="view-all"
+      >
+        View all jobs →
+      </a>
+
+    </section>
+
+
+
+    <section class="right-card">
+
+      <h3>
+        Why use Kofkro LMIS?
+      </h3>
+
+
+      <div class="benefit">
+
+        <div class="benefit-icon">
+          ✓
+        </div>
+
+        <div>
+
+          <strong>
+            Find local opportunities
+          </strong>
+
+          <p>
+            Discover jobs and training
+            opportunities close to you.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="benefit">
+
+        <div class="benefit-icon">
+          ✓
+        </div>
+
+        <div>
+
+          <strong>
+            Build your career
+          </strong>
+
+          <p>
+            Connect your skills with
+            employers and opportunities.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="benefit">
+
+        <div class="benefit-icon">
+          ✓
+        </div>
+
+        <div>
+
+          <strong>
+            Support local businesses
+          </strong>
+
+          <p>
+            Employers can reach people
+            looking for work.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <section class="right-card account-card">
+
+      <h3>
+        Your account
+      </h3>
+
+
+      <p>
+        You are signed in as:
+      </p>
+
+
+      <strong id="accountName">
+        Loading...
+      </strong>
+
+
+      <span id="accountEmail">
+        Loading...
+      </span>
+
+
+      <button
+        type="button"
+        id="logoutSide"
+        class="secondary-button"
+      >
+        Sign out
+      </button>
+
+    </section>
+
+
+  </aside>
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="site-footer">
+
+  <div class="footer-inner">
+
+    <div>
+
+      <strong>
+        Kofkro LMIS
+      </strong>
+
+      <p>
+        Connecting people to jobs,
+        skills and opportunities.
+      </p>
+
+    </div>
+
+
+    <div class="footer-links">
+
+      <a href="/marketing.html">
+        About
+      </a>
+
+      <a href="#jobs">
+        Jobs
+      </a>
+
+      <a href="#post">
+        Employers
+      </a>
+
+      <a href="#">
+        Help
+      </a>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+
+<script>
+
+/* =====================================================
+   KOFKRO LMIS HOME JAVASCRIPT
+===================================================== */
+
+document.addEventListener(
+  'DOMContentLoaded',
+  async function () {
+
+
+    let currentUser = null;
+
+
+
+    /* =================================================
+       LOAD CURRENT USER
+    ================================================= */
+
+    async function loadUser() {
+
+      try {
+
+        const response =
+          await fetch(
+            '/api/auth/me',
+            {
+              credentials:
+                'same-origin'
+            }
+          );
+
+
+        if (!response.ok) {
+
+          window.location.href =
+            '/login.html';
+
+          return null;
+        }
+
+
+        const data =
+          await response.json();
+
+
+        currentUser =
+          data.user;
+
+
+        document.getElementById(
+          'profileName'
+        ).textContent =
+          currentUser.name;
+
+
+        document.getElementById(
+          'profileEmail'
+        ).textContent =
+          currentUser.email;
+
+
+        document.getElementById(
+          'profileRole'
+        ).textContent =
+          formatRole(
+            currentUser.role
+          );
+
+
+        document.getElementById(
+          'avatarLetter'
+        ).textContent =
+          currentUser.name
+            .charAt(0)
+            .toUpperCase();
+
+
+        document.getElementById(
+          'accountName'
+        ).textContent =
+          currentUser.name;
+
+
+        document.getElementById(
+          'accountEmail'
+        ).textContent =
+          currentUser.email;
+
+
+        return currentUser;
+
+
+      } catch (error) {
+
+        console.error(
+          'User loading error:',
+          error
+        );
+
+
+        window.location.href =
+          '/login.html';
+
+        return null;
+      }
+
+    }
+
+
+
+    /* =================================================
+       FORMAT ROLE
+    ================================================= */
+
+    function formatRole(role) {
+
+      if (
+        role === 'employer'
+      ) {
+
+        return 'Employer';
+
+      }
+
+
+      if (
+        role ===
+        'training_provider'
+      ) {
+
+        return 'Training Provider';
+
+      }
+
+
+      return 'Candidate';
+
+    }
+
+
+
+    /* =================================================
+       LOAD JOBS
+    ================================================= */
+
+    async function loadJobs() {
+
+      const q =
+        document.getElementById(
+          'q'
+        ).value.trim();
+
+
+      const type =
+        document.getElementById(
+          'ft'
+        ).value;
+
+
+      const params =
+        new URLSearchParams();
+
+
+      if (q) {
+
+        params.set(
+          'q',
+          q
+        );
+
+      }
+
+
+      if (type) {
+
+        params.set(
+          'type',
+          type
+        );
+
+      }
+
+
+      try {
+
+        const response =
+          await fetch(
+            '/api/jobs?' +
+            params.toString(),
+            {
+              credentials:
+                'same-origin'
+            }
+          );
+
+
+        const data =
+          await response.json();
+
+
+        if (!response.ok) {
+
+          throw new Error(
+            data.error ||
+            'Could not load jobs.'
+          );
+
+        }
+
+
+        renderJobs(
+          data.jobs
+        );
+
+
+      } catch (error) {
+
+        console.error(
+          error
+        );
+
+
+        document.getElementById(
+          'jobs-list'
+        ).innerHTML = `
+
+          <div class="empty">
+
+            Unable to load jobs.
+
+          </div>
+
+        `;
+
+      }
+
+    }
+
+
+
+    /* =================================================
+       RENDER JOBS
+    ================================================= */
+
+    function renderJobs(
+      jobs
+    ) {
+
+      const box =
+        document.getElementById(
+          'jobs-list'
+        );
+
+
+      const count =
+        document.getElementById(
+          'count'
+        );
+
+
+      count.textContent =
+        jobs.length +
+        (
+          jobs.length === 1
+            ? ' job'
+            : ' jobs'
+        );
+
+
+      if (!jobs.length) {
+
+        box.innerHTML = `
+
+          <div class="empty">
+
+            <strong>
+              No jobs found.
+            </strong>
+
+            <br>
+
+            Try another search
+            or filter.
+
+          </div>
+
+        `;
+
+
+        renderRecentJobs(
+          []
+        );
+
+
+        return;
+      }
+
+
+      box.innerHTML =
+        jobs.map(
+          function (job) {
+
+            const letter =
+              job.co
+                .charAt(0)
+                .toUpperCase();
+
+
+            return `
+
+              <article
+                class="job-card"
+              >
+
+                <div
+                  class="job-logo"
+                >
+                  ${escapeHtml(
+                    letter
+                  )}
+                </div>
+
+
+                <div
+                  class="job-content"
+                >
+
+                  <h3>
+                    ${escapeHtml(
+                      job.title
+                    )}
+                  </h3>
+
+
+                  <p
+                    class="company"
+                  >
+                    ${escapeHtml(
+                      job.co
+                    )}
+                    ·
+                    ${escapeHtml(
+                      job.loc
+                    )}
+                  </p>
+
+
+                  <div
+                    class="job-pills"
+                  >
+
+                    <span>
+                      ${escapeHtml(
+                        job.type
+                      )}
+                    </span>
+
+
+                    ${
+                      job.pay
+                        ? `
+                          <span>
+                            ${escapeHtml(
+                              job.pay
+                            )}
+                          </span>
+                        `
+                        : ''
+                    }
+
+
+                    ${
+                      job.sample
+                        ? `
+                          <span>
+                            Sample
+                          </span>
+                        `
+                        : ''
+                    }
+
+                  </div>
+
+
+                  <p
+                    class="description"
+                  >
+                    ${escapeHtml(
+                      job.desc
+                    )}
+                  </p>
+
+                </div>
+
+
+                <div
+                  class="job-actions"
+                >
+
+                 '<a class="btn b-navy" href="/resume.html?id=' +
+encodeURIComponent(j.id) +
+'">Apply</a>'
+
+
+                  ${
+                    !job.sample &&
+                    currentUser
+                      ? `
+
+                        <button
+                          type="button"
+                          class="remove-btn"
+                          data-delete="${job.id}"
+                        >
+                          Remove
+                        </button>
+
+                      `
+                      : ''
+                  }
+
+                </div>
+
+              </article>
+
+            `;
+
+          }
+        ).join('');
+
+
+      renderRecentJobs(
+        jobs.slice(0, 5)
+      );
+
+    }
+
+
+
+    /* =================================================
+       RECENT JOBS
+    ================================================= */
+
+    function renderRecentJobs(
+      jobs
+    ) {
+
+      const box =
+        document.getElementById(
+          'recentJobs'
+        );
+
+
+      if (!jobs.length) {
+
+        box.innerHTML = `
+
+          <p class="muted">
+            No recent jobs.
+          </p>
+
+        `;
+
+        return;
+
+      }
+
+
+      box.innerHTML =
+        jobs.map(
+          function (job) {
+
+            return `
+
+              <div
+                class="recent-job"
+              >
+
+                <strong>
+                  ${escapeHtml(
+                    job.title
+                  )}
+                </strong>
+
+                <span>
+                  ${escapeHtml(
+                    job.co
+                  )}
+                </span>
+
+              </div>
+
+            `;
+
+          }
+        ).join('');
+
+    }
+
+
+
+    /* =================================================
+       SEARCH
+    ================================================= */
+
+    document
+      .getElementById('q')
+      .addEventListener(
+        'input',
+        loadJobs
+      );
+
+
+    document
+      .getElementById('ft')
+      .addEventListener(
+        'change',
+        loadJobs
+      );
+
+
+
+    /* =================================================
+       DELETE JOB
+    ================================================= */
+
+    document
+      .getElementById(
+        'jobs-list'
+      )
+      .addEventListener(
+        'click',
+        async function (event) {
+
+          const button =
+            event.target.closest(
+              '[data-delete]'
+            );
+
+
+          if (!button) {
+            return;
+          }
+
+
+          const id =
+            button.dataset.delete;
+
+
+          if (
+            !confirm(
+              'Are you sure you want to remove this job?'
+            )
+          ) {
+
+            return;
+
+          }
+
+
+          try {
+
+            const response =
+              await fetch(
+                '/api/jobs/' +
+                id,
+                {
+                  method:
+                    'DELETE',
+
+                  credentials:
+                    'same-origin'
+                }
+              );
+
+
+            const data =
+              await response.json();
+
+
+            if (!response.ok) {
+
+              throw new Error(
+                data.error ||
+                'Could not remove job.'
+              );
+
+            }
+
+
+            await loadJobs();
+
+
+          } catch (error) {
+
+            alert(
+              error.message
+            );
+
+          }
+
+        }
+      );
+
+
+
+    /* =================================================
+       POST JOB
+    ================================================= */
+
+    document
+      .getElementById('pf')
+      .addEventListener(
+        'submit',
+        async function (event) {
+
+          event.preventDefault();
+
+
+          const value =
+            function (id) {
+
+              return document
+                .getElementById(id)
+                .value
+                .trim();
+
+            };
+
+
+          const job = {
+
+            title:
+              value('f-title'),
+
+            co:
+              value('f-co'),
+
+            loc:
+              value('f-loc'),
+
+            type:
+              value('f-type'),
+
+            pay:
+              value('f-pay'),
+
+            mail:
+              value('f-mail'),
+
+            desc:
+              value('f-desc')
+
+          };
+
+
+          try {
+
+            const response =
+              await fetch(
+                '/api/jobs',
+                {
+
+                  method:
+                    'POST',
+
+                  headers: {
+
+                    'Content-Type':
+                      'application/json'
+
+                  },
+
+                  credentials:
+                    'same-origin',
+
+                  body:
+                    JSON.stringify(
+                      job
+                    )
+
+                }
+              );
+
+
+            const data =
+              await response.json();
+
+
+            if (!response.ok) {
+
+              throw new Error(
+                data.error ||
+                'Could not post job.'
+              );
+
+            }
+
+
+            event.target.reset();
+
+
+            const success =
+              document.getElementById(
+                'ok'
+              );
+
+
+            success.style.display =
+              'block';
+
+
+            setTimeout(
+              function () {
+
+                success.style.display =
+                  'none';
+
+              },
+              4000
+            );
+
+
+            await loadJobs();
+
+
+            document
+              .getElementById(
+                'jobs'
+              )
+              .scrollIntoView({
+                behavior:
+                  'smooth'
+              });
+
+
+          } catch (error) {
+
+            alert(
+              error.message
+            );
+
+          }
+
+        }
+      );
+
+
+
+    /* =================================================
+       LOGOUT
+    ================================================= */
+
+    async function logoutUser() {
+
+      try {
+
+        await fetch(
+          '/api/auth/logout',
+          {
+
+            method:
+              'POST',
+
+            credentials:
+              'same-origin'
+
+          }
+        );
+
+      } catch (error) {
+
+        console.error(
+          error
+        );
+
+      }
+
+
+      window.location.href =
+        '/marketing.html';
+
+    }
+
+
+    document
+      .getElementById('logout')
+      .addEventListener(
+        'click',
+        logoutUser
+      );
+
+
+    document
+      .getElementById(
+        'logoutSide'
+      )
+      .addEventListener(
+        'click',
+        logoutUser
+      );
+
+
+
+    /* =================================================
+       UPDATE PROFILE
+    ================================================= */
+
+    document
+      .getElementById(
+        'updateProfile'
+      )
+      .addEventListener(
+        'click',
+        function () {
+
+          alert(
+            'Profile editing will be added next.'
+          );
+
+        }
+      );
+
+
+
+    /* =================================================
+       ESCAPE HTML
+    ================================================= */
+
+    function escapeHtml(
+      value
+    ) {
+
+      const div =
+        document.createElement(
+          'div'
+        );
+
+
+      div.textContent =
+        value ?? '';
+
+
+      return div.innerHTML;
+
+    }
+
+
+
+    /* =================================================
+       START APPLICATION
+    ================================================= */
+
+    const user =
+      await loadUser();
+
+
+    if (user) {
+
+      await loadJobs();
+
+    }
+
+  }
+);
+
+</script>
+
+
+</body>
+</html>

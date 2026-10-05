@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kofkro LMIS – Purpose</title>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#0b3866;--sky:#1ba9e8;--top:#0f1c2e;--panel:#f2f4f9;--ink:#111;--mute:#6b7280;--line:#e3e6ec;--bg:#fff;--card:#fff;--field:#fff;
+--hero-img:none; /* set to url("your-photo.jpg") to add a banner photo */
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1522;--card:#151e2e;--panel:#18223a;--ink:#eef1f7;--mute:#9aa4b8;--line:#26314a;--field:#0e1522}}
+:root[data-theme="dark"]{--bg:#0e1522;--card:#151e2e;--panel:#18223a;--ink:#eef1f7;--mute:#9aa4b8;--line:#26314a;--field:#0e1522}
+*,*:before,*:after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.65 "Open Sans",system-ui,sans-serif}
+h1,h2,h3,.q{font-family:Quicksand,system-ui,sans-serif}
+a{color:var(--sky);text-decoration:none}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--sky);outline-offset:2px}
+.wrap{max-width:1170px;margin:0 auto;padding:0 20px}
+.topbar{background:var(--top);color:#fff;font-size:15px}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:48px}
+.soc{display:flex;gap:8px}
+.soc a,.soc2 a{display:grid;place-items:center;color:#fff;font:700 13px Arial,sans-serif}
+.soc a{width:24px;height:24px;border-radius:2px}
+.fb{background:#3b5998}.tw{background:#1da1f2}.gp{background:#dd4b39}.in{background:#0e76a8}
+.topbar span{margin-left:28px}
+header.main{background:#fff;color:#111;position:relative;z-index:50}
+header.main .wrap{position:relative;display:flex;align-items:center;justify-content:space-between;height:90px;gap:20px}
+.brand{display:flex;align-items:center;gap:10px;color:#2b3340;font:700 34px Quicksand,sans-serif}
+.brand i{width:50px;height:50px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font:700 24px Quicksand,sans-serif;font-style:normal}
+.btns{display:flex;gap:9px}
+.btn{display:inline-block;border:0;color:#fff;padding:0 28px;height:46px;line-height:46px;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;font:inherit;font-size:15px}
+.b-navy{background:var(--navy)}.b-sky{background:var(--sky)}
+.hero{height:160px;display:grid;place-items:center;color:#fff;background:linear-gradient(rgba(11,40,70,.72),rgba(11,40,70,.72)),var(--hero-img),repeating-linear-gradient(135deg,#2a4a6b 0 18px,#335676 18px 36px)}
+.hero h1{font-size:46px;font-weight:700;margin:0}
+.crumbs{background:#f2f4f9;text-align:center;padding:22px 0;color:#9aa1ad}
+.crumbs a{padding:0 16px;border-right:1px solid #ccd}
+.crumbs a:last-of-type{border:0}
+.crumbs b{font-weight:400;padding-left:16px}
+.page{display:grid;grid-template-columns:1fr 370px;gap:30px;padding-top:80px;padding-bottom:80px}
+.profile{display:grid;grid-template-columns:178px 1fr auto;gap:26px;align-items:start}
+.photo{width:178px;height:178px;padding:4px;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+.photo div{width:100%;height:100%;background:linear-gradient(160deg,var(--navy),var(--sky));color:#fff;display:grid;place-items:center;font:700 72px Quicksand,sans-serif}
+.who h2{font-size:26px;margin:4px 0 0}
+.role{color:var(--sky);font-size:18px;font-family:Quicksand,sans-serif;padding-bottom:14px;border-bottom:1px solid var(--line);display:inline-block;min-width:172px}
+.meta{margin-top:14px;display:flex;flex-direction:column;gap:12px}
+.meta p{margin:0;display:flex;gap:10px;align-items:center}
+.meta svg{width:16px;height:16px;fill:var(--sky);flex:none}
+.act{text-align:right}
+.soc2{display:flex;gap:10px;justify-content:flex-end;margin-bottom:22px}
+.soc2 a{width:26px;height:26px;border-radius:50%;opacity:.8}
+.dl{width:191px;text-align:center;background:var(--navy);padding:0}
+.dl{height:61px;line-height:61px}
+.main-col{min-width:0}.body{margin-top:54px}
+.body h3{font-size:24px;margin:0 0 6px}
+.body .sec{margin-bottom:46px}
+.body p{color:var(--mute);margin:0 0 14px}
+.tl{border-left:2px solid var(--line);margin-left:6px;padding-left:26px}
+.it{position:relative;margin-bottom:22px}
+.it:before{content:"";position:absolute;left:-34px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--sky);border:3px solid var(--bg);box-sizing:content-box}
+.it h4{margin:0;font:700 18px Quicksand,sans-serif}
+.it .tag{color:var(--sky);font-size:13px}
+.it ul{margin:6px 0 0;padding-left:18px;color:var(--mute)}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{border:1px solid var(--line);background:var(--card);padding:10px 16px;border-radius:3px;border-left:4px solid var(--sky)}
+.chip b{font-family:Quicksand,sans-serif}
+.chip small{display:block;color:var(--mute)}
+.map{width:100%;border-collapse:collapse}
+.map th,.map td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+.map th{background:var(--panel);font-family:Quicksand,sans-serif}
+.map td+td{color:var(--navy);font-weight:600}
+:root[data-theme="dark"] .map td+td{color:var(--sky)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .map td+td{color:var(--sky)}}
+.side{grid-column:2;grid-row:1;position:sticky;top:20px;background:var(--panel);padding:40px 34px;align-self:start}
+.side h2{font:400 26px Quicksand,sans-serif;margin:0 0 26px}
+.side input,.side textarea,.side select{display:block;width:100%;border:1px solid var(--line);background:var(--field);color:var(--ink);padding:14px 24px;margin-bottom:20px;font:inherit}
+.side textarea{height:120px;resize:vertical}
+.side .btn{width:100%;background:var(--sky);text-align:center}
+.ok{margin-top:14px;color:#1d7a4e;display:none}
+@media(max-width:1000px){.page{grid-template-columns:1fr}.side{grid-column:1;grid-row:auto;position:static}.btns{display:none}.profile{grid-template-columns:150px 1fr}.photo{width:150px;height:150px}.act{grid-column:1 / -1;text-align:left}.soc2{justify-content:flex-start}}
+@media(max-width:560px){.profile{grid-template-columns:1fr}.hero h1{font-size:34px}.page{padding-top:40px}.topbar span{margin-left:12px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.jtools{display:flex;gap:10px;margin:14px 0 6px}
+.jtools input,.jtools select{border:1px solid var(--line);background:var(--field);color:var(--ink);padding:11px 14px;font:inherit}
+.jtools input{flex:1;min-width:0}
+.cnt{margin:8px 0 14px!important;font-size:14px}
+.job{display:grid;grid-template-columns:52px 1fr auto;gap:16px;border:1px solid var(--line);background:var(--card);padding:18px;margin-bottom:12px;align-items:start}
+.job .lg{width:52px;height:52px;background:var(--navy);color:#fff;display:grid;place-items:center;font:700 22px Quicksand,sans-serif}
+.job h4{margin:0;font:700 18px Quicksand,sans-serif}
+.job .co{color:var(--mute);font-size:14px;margin:2px 0 6px}
+.job .pills{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.pill{background:var(--panel);color:var(--ink);font-size:12.5px;padding:2px 10px;border-radius:99px}
+.pill.sm{background:var(--sky);color:#fff}
+.job .ds{margin:0;color:var(--mute);font-size:14px;overflow-wrap:anywhere}
+.jact{display:flex;flex-direction:column;gap:8px;align-items:stretch;min-width:104px}
+.jact .btn,.jact button{height:38px;line-height:38px;padding:0 14px;font-size:13px;text-align:center}
+.jact .gh{background:none;border:1px solid var(--line);color:var(--mute);cursor:pointer;line-height:36px;font:inherit;font-size:13px;height:38px}
+.empty{border:1px dashed var(--line);padding:26px;text-align:center;color:var(--mute)}
+@media(max-width:560px){.job{grid-template-columns:44px 1fr}.job .lg{width:44px;height:44px}.jact{grid-column:1 / -1;flex-direction:row}.jtools{flex-direction:column}}
+
+/* Navigation and dropdowns */
+nav.menu{margin-left:auto;margin-right:12px}
+nav.menu ul{list-style:none;margin:0;padding:0;display:flex;gap:34px;align-items:center}
+nav.menu li{height:90px;display:flex;align-items:center}
+nav.menu li.dd:not(.mega){position:relative}
+.top{background:none;border:0;padding:0;color:#222;letter-spacing:1.5px;font:inherit;font-size:15px;text-transform:uppercase;cursor:pointer;display:inline-block}
+.top i{font-style:normal;font-size:11px}
+.top:hover,.dd.open>.top{color:var(--sky)}
+.panel{display:none;position:absolute;top:100%;background:#fff;box-shadow:0 8px 24px rgba(0,0,0,.14);z-index:60}
+.dd.open>.panel{display:block}
+.panel a{display:block;color:#222;padding:8px 0;font-size:15px}
+.panel a:hover{color:var(--sky)}
+.panel.sm{left:-20px;min-width:230px;padding:16px 24px}
+.panel.big{left:0;right:0;padding:36px 40px 30px;grid-template-columns:1fr 1fr 1fr;gap:30px}
+.dd.open>.panel.big{display:grid}
+.panel h5{font:700 17px Quicksand,sans-serif;margin:0 0 16px;color:#111}
+.panel.big a{padding:9px 0}
+.burger{display:none;background:none;border:1px solid var(--line);font-size:24px;padding:2px 12px;cursor:pointer;color:#222;margin-left:auto}
+@media(max-width:1000px){
+  .burger{display:block}
+  nav.menu{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;box-shadow:0 8px 24px rgba(0,0,0,.14);margin:0;padding:8px 20px 16px}
+  nav.menu.open{display:block}
+  nav.menu ul{flex-direction:column;align-items:stretch;gap:0}
+  nav.menu li{height:auto;display:block}
+  .top{padding:12px 0;width:100%;text-align:left}
+  .panel,.panel.sm,.panel.big{position:static;box-shadow:none;min-width:0;padding:0 0 8px 14px}
+  .dd.open>.panel.big{display:block}
+  .panel h5{margin:8px 0}
+}
+
+header.main{position:relative;z-index:60}
+header.main .wrap{position:relative}
+nav.menu{display:flex;margin-left:auto;margin-right:12px;align-items:stretch;align-self:stretch}
+nav.menu>a,.tr{color:#222;letter-spacing:1.5px;font:inherit;font-size:15px;text-transform:uppercase;background:none;border:0;padding:0 16px;line-height:90px;cursor:pointer;display:block}
+.tr:after{content:"";display:inline-block;width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translateY(-3px);margin-left:8px}
+nav.menu>a:hover,.tr:hover,.has.open>.tr{color:var(--sky)}
+.has{position:relative}
+.has.mega{position:static}
+.dd{display:none;position:absolute;top:100%;left:0;min-width:250px;background:#fff;box-shadow:0 14px 30px rgba(0,0,0,.18);padding:16px 0;z-index:70;text-align:left}
+.has.open>.dd{display:block}
+.has.mega>.dd{left:20px;right:20px;padding:36px 40px;grid-template-columns:1.2fr 1fr 1fr;gap:30px}
+.has.mega.open>.dd{display:grid}
+.dd a{display:block;color:#222;padding:8px 24px;font-size:15px}
+.has.mega .dd a{padding:8px 0}
+.dd a:hover{color:var(--sky)}
+.dd h5{font:700 17px Quicksand,sans-serif;margin:0 0 12px;color:#111}
+@media (hover:hover) and (min-width:1001px){.has:hover>.dd{display:block}.has.mega:hover>.dd{display:grid}.has:hover>.tr{color:var(--sky)}.closing .dd{display:none!important}}
+.burger{display:none;background:none;border:1px solid #cfd4dc;font-size:22px;width:44px;height:44px;cursor:pointer;color:#222}
+details{border:1px solid var(--line);background:var(--card);padding:12px 16px;margin-bottom:8px}
+summary{cursor:pointer;font-family:Quicksand,sans-serif;font-weight:700}
+details p{margin:8px 0 0}
+.cform{display:grid;gap:12px;max-width:560px}
+.cform input,.cform textarea{border:1px solid var(--line);background:var(--field);color:var(--ink);padding:13px 16px;font:inherit;width:100%}
+.cform textarea{height:110px;resize:vertical}
+.cform .btn{width:200px}
+
+.topbar{position:relative;z-index:80}
+.tbs{display:flex;gap:30px}
+.tb{position:relative}
+.tbtn{background:none;border:0;color:#fff;font:inherit;cursor:pointer;height:48px;padding:0}
+.tbtn:after{content:"";display:inline-block;border:4px solid transparent;border-top-color:currentColor;border-bottom:0;margin-left:7px;vertical-align:middle}
+.tbdd{display:none;position:absolute;top:100%;right:0;min-width:130px;background:#fff;border:1px solid #d7dbe2;padding:2px 0 4px;z-index:90;border-bottom:4px solid #fff}
+.tb.open .tbdd{display:block}
+.tbdd a{display:block;color:#222;padding:5px 24px;line-height:22px;white-space:nowrap;font-size:15px}
+.tbdd a:hover,.tbdd a.sel{background:var(--navy);color:#fff}
+.tbdd a.sel:after{content:" \2713"}
+@media (hover:hover) and (min-width:1001px){.tb:hover .tbdd{display:block}.topbar.closing .tbdd{display:none!important}}
+dialog{border:0;padding:30px;width:calc(100% - 40px);max-width:420px;background:var(--card);color:var(--ink);box-shadow:0 20px 50px rgba(0,0,0,.35)}
+dialog::backdrop{background:rgba(10,20,40,.55)}
+dialog h3{font:700 24px Quicksand,sans-serif;margin:0 0 14px}
+dialog [data-pane]{display:none}
+dialog [data-pane].show{display:block}
+dialog .x{position:absolute;top:8px;right:12px;background:none;border:0;font-size:28px;line-height:1;cursor:pointer;color:var(--mute)}
+dialog .btn{width:100%;margin-top:6px}
+dialog .note{font-size:13px;color:var(--mute);margin:4px 0 0}
+[hidden]{display:none!important}
+
+.foot{background:#333;color:#b4b8bf;font-size:15px}
+.fgrid{display:grid;grid-template-columns:1.15fr 1fr 1fr 1.15fr;gap:40px;padding-top:80px;padding-bottom:70px}
+.fcol p{margin:0 0 22px;line-height:1.7}
+.fcol h4{font:600 22px Quicksand,sans-serif;color:#eee;margin:0 0 30px}
+.fcol>a{display:block;color:#b4b8bf;padding:5px 0;margin-bottom:3px}
+.fcol>a:hover{color:var(--sky)}
+.fi{display:flex;gap:16px;align-items:center;margin-bottom:20px}
+.fi svg{flex:none}
+.fi:first-of-type{align-items:flex-start}
+.nl{display:flex;margin:6px 0 18px}
+.nl input{flex:1;min-width:0;border:0;padding:0 20px;height:44px;font:inherit;background:#fff;color:#222}
+.nl button{width:44px;height:44px;border:0;background:var(--sky);cursor:pointer;display:grid;place-items:center}
+.fsoc{margin-top:16px}
+.fsoc a{width:30px;height:30px;font-size:14px}
+.foot .ok{color:#7fd6a7;margin:-8px 0 12px}
+.fbar{background:#0f1c2e;color:#8e98a8;font-size:15px}
+.fbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:74px;flex-wrap:wrap}
+.fl{display:flex;gap:28px;align-items:center;flex-wrap:wrap}
+.fl a{color:#8e98a8}
+.fl a:hover{color:var(--sky)}
+.fl button{background:none;border:1px solid #3b4a62;color:#aab4c8;padding:4px 12px;cursor:pointer;font:inherit;font-size:13px}
+.top{position:fixed;right:max(24px,env(safe-area-inset-right,0px));bottom:max(40px,env(safe-area-inset-bottom,0px));width:50px;height:50px;background:var(--sky);display:none;place-items:center;z-index:50}
+.top.show{display:grid}
+@media(max-width:1000px){.fgrid{grid-template-columns:1fr 1fr;padding-top:56px}}
+@media(max-width:560px){.fgrid{grid-template-columns:1fr}.fbar .wrap{padding-top:16px;padding-bottom:16px}}
+</style>
+</head><body>
+<div class="topbar"><div class="wrap">
+  <div class="soc"><a class="fb" href="#" aria-label="Facebook">f</a><a class="tw" href="#" aria-label="Twitter">t</a><a class="gp" href="#" aria-label="Google+">G+</a><a class="in" href="#" aria-label="LinkedIn">in</a></div>
+  <div class="tbs">
+    <div class="tb"><button class="tbtn" type="button" aria-expanded="false">Language</button>
+      <div class="tbdd"><a href="#" data-lang="en">English</a><a href="#" data-lang="fr">French (Français)</a><a href="#" data-lang="es">Spanish (Español)</a><a href="#" data-lang="it">Italian (Italiano)</a></div></div>
+    <div class="tb"><button class="tbtn" type="button" aria-expanded="false">My Account</button>
+      <div class="tbdd"><a href="#" data-modal="cart">Cart</a><a href="#" data-modal="checkout">Checkout</a><a href="#" data-modal="account">My Account</a><a href="#" data-modal="login">Login</a></div></div>
+  </div>
+</div></div>
+<header class="main"><div class="wrap">
+  <a class="brand" href="#"><i>K</i>Kofkro</a>
+  <nav class="menu" id="menu" aria-label="Main">
+    <a href="#about">Home</a>
+    <div class="has"><button class="tr" type="button" aria-expanded="false">Networks</button>
+      <div class="dd">
+        <a href="#jobs" data-filter="">Browse all jobs</a>
+        <a href="#jobs" data-filter="Internship">Internships</a>
+        <a href="#jobs" data-filter="Apprenticeship">Apprenticeships</a>
+        <a href="#youth">Skills and training</a>
+        <a href="#alignment">Mentorship</a>
+      </div></div>
+    <div class="has"><button class="tr" type="button" aria-expanded="false">Jobs</button>
+      <div class="dd">
+        <a href="#post">Post a job</a>
+        <a href="#employers">Employer engagement</a>
+        <a href="#alignment">Partnership tracking</a>
+        <a href="#data">Hiring data</a>
+      </div></div>
+    <div class="has mega"><button class="tr" type="button" aria-expanded="false">Pages</button>
+      <div class="dd">
+        <div><h5>About the LMIS</h5><a href="#about">About</a><a href="#youth">Purpose</a><a href="#data">Evidence and planning</a><a href="#alignment">Project alignment</a></div>
+        <div><h5>Help</h5><a href="#contact">Contact us</a><a href="#faq">FAQ</a><a href="#news">Updates</a></div>
+        <div><h5>Job types</h5><a href="#jobs" data-filter="Full-time">Full-time</a><a href="#jobs" data-filter="Part-time">Part-time</a><a href="#jobs" data-filter="Internship">Internships</a><a href="#jobs" data-filter="Apprenticeship">Apprenticeships</a></div>
+      </div></div>
+    <div class="has"><button class="tr" type="button" aria-expanded="false">Me</button>
+      <div class="dd"><a href="#news">Announcements</a><a href="#news">Success stories</a></div></div>
+  </nav>
+  <div class="btns"><a class="btn b-navy" href="#jobs">Find jobs</a><a class="btn b-sky" href="#post">+ Post a job</a></div>
+<button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="menu">&#9776;</button>
+</div></header>
+<div class="hero"><h1>Resume Page</h1></div>
+<div class="crumbs"><a href="#about">Home</a><a href="#employers">For Employers</a><b>Purpose</b></div>
+
+<div class="wrap page">
+  <main class="main-col">
+  <div class="profile" id="about">
+    <div class="photo"><div>K</div></div>
+    <div class="who">
+      <h2>Kofkro LMIS</h2>
+      <span class="role">Labour Market Information System</span>
+      <div class="meta">
+        <p><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Kofkro Municipality, Ghana</p>
+        <p><svg viewBox="0 0 24 24"><path d="M2 6h20v12H2zm10 2.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7z"/></svg>Supported by STAR Ghana</p>
+      </div>
+    </div>
+    <div class="act">
+      <div class="soc2"><a class="fb" href="#" aria-label="Facebook">f</a><a class="gp" href="#" aria-label="Google+">G+</a><a class="tw" href="#" aria-label="Twitter">t</a><a style="background:#cb2027" href="#" aria-label="Pinterest">P</a></div>
+      <a class="btn dl" href="#">Download brief</a>
+    </div>
+
+  </div>
+  <div class="body">
+      <div class="sec" id="jobs"><h3>Jobs board</h3>
+        <p>Employers post openings here. Youth browse, search and apply.</p>
+        <div class="jtools"><input id="q" type="search" placeholder="Search title, company or skill" aria-label="Search jobs">
+          <select id="ft" aria-label="Job type"><option value="">All types</option><option value="Full-time">Full-time</option><option value="Part-time">Part-time</option><option value="Internship">Internship</option><option value="Apprenticeship">Apprenticeship</option></select></div>
+        <p id="count" class="cnt"></p><div id="jobs-list"></div></div>
+      <div class="sec" id="youth"><h3>Strengthen youth employability</h3>
+        <div class="tl">
+          <div class="it"><h4>Map youth skills and competencies</h4></div>
+          <div class="it"><h4>Identify skills gaps</h4></div>
+          <div class="it"><h4>Link youth to opportunities</h4><span class="tag">Training, internships, apprenticeships and jobs</span></div>
+        </div></div>
+      <div class="sec" id="employers"><h3>Improve local labour market coordination</h3>
+        <div class="tl">
+          <div class="it"><h4>Connect the key actors</h4><span class="tag">Youth, employers, training providers and the Municipality</span></div>
+          <div class="it"><h4>Reduce information asymmetry</h4><span class="tag">Between job seekers and employers</span></div>
+          <div class="it"><h4>Facilitate structured employer engagement</h4></div>
+        </div></div>
+      <div class="sec" id="data"><h3>Enable evidence-based decision making</h3>
+        <p>Real-time data on:</p>
+        <div class="chips" style="margin-bottom:18px">
+          <div class="chip"><b>Youth unemployment</b><small>Trends</small></div>
+          <div class="chip"><b>Sector demand</b></div>
+          <div class="chip"><b>Skills shortages</b></div>
+          <div class="chip"><b>Placement rates</b></div>
+        </div>
+        <div class="tl">
+          <div class="it"><h4>Inform Municipal planning under Act 936</h4></div>
+          <div class="it"><h4>Support STAR Ghana’s adaptive programming</h4></div>
+        </div></div>
+      <div class="sec" id="sustain"><h3>Institutionalize youth engagement</h3>
+        <div class="tl">
+          <div class="it"><h4>Anchor the platform</h4><span class="tag">Under a Youth Desk or Assembly structure</span></div>
+          <div class="it"><h4>Ensure sustainability</h4><span class="tag">Beyond project life</span></div>
+        </div></div>
+      <div class="sec" id="alignment"><h3>How the LMIS supports the project</h3>
+        <table class="map"><thead><tr><th>Project objective</th><th>LMIS contribution</th></tr></thead><tbody>
+          <tr><td>Reduce youth unemployment</td><td>Job matching + internship pipeline</td></tr>
+          <tr><td>Strengthen skills training</td><td>Skills gap analysis + training linkage</td></tr>
+          <tr><td>Promote mentorship</td><td>Digital mentor-youth pairing</td></tr>
+          <tr><td>Enhance public-private collaboration</td><td>Employer dashboard + partnership tracking</td></tr>
+          <tr><td>Strengthen city systems</td><td>Data ready for integration into Municipal planning and budgeting</td></tr>
+        </tbody></table></div>
+      <div class="sec" id="faq"><h3>Frequently asked questions</h3>
+        <details><summary>Who is the LMIS for?</summary><p>Youth, employers, training providers and the Municipality.</p></details>
+        <details><summary>What can youth do on it?</summary><p>Map their skills, see skills gaps, and find training, internships, apprenticeships and jobs.</p></details>
+        <details><summary>How can employers use it?</summary><p>Post jobs and engage with youth in a structured way. An employer dashboard will track partnerships.</p></details>
+        <details><summary>Who will run it long term?</summary><p>The plan is to anchor it under a Youth Desk or Assembly structure so it lasts beyond the project.</p></details></div>
+      <div class="sec" id="news"><h3>Announcements and success stories</h3>
+        <div class="empty">No posts yet. Updates from the Youth Desk will appear here.</div></div>
+      <div class="sec" id="contact"><h3>Contact us</h3>
+        <form id="cf" class="cform">
+          <input placeholder="Your name" aria-label="Your name" required>
+          <input type="email" placeholder="E-mail" aria-label="E-mail" required>
+          <textarea placeholder="Message" aria-label="Message" required></textarea>
+          <button class="btn b-sky" type="submit">Send message</button>
+          <p class="ok" id="cok" role="status">Message sent. The LMIS desk will reply by e-mail.</p>
+        </form></div>
+    </div>
+  </main>
+
+  <aside class="side" id="post">
+    <h2>Post a job</h2>
+    <form id="pf">
+      <input id="f-title" placeholder="Job title" aria-label="Job title" required maxlength="80">
+      <input id="f-co" placeholder="Company or organisation" aria-label="Company" required maxlength="60">
+      <input id="f-loc" placeholder="Location (e.g. Kofkro)" aria-label="Location" required maxlength="60">
+      <select id="f-type" aria-label="Job type"><option value="Full-time">Full-time</option><option value="Part-time">Part-time</option><option value="Internship">Internship</option><option value="Apprenticeship">Apprenticeship</option></select>
+      <input id="f-pay" placeholder="Pay (optional)" aria-label="Pay" maxlength="40">
+      <input id="f-mail" type="email" placeholder="Contact e-mail for applicants" aria-label="Contact e-mail" required>
+      <textarea id="f-desc" placeholder="Describe the role and the skills needed" aria-label="Description" required maxlength="800"></textarea>
+      <button class="btn" type="submit">Publish job</button>
+      <p class="ok" id="ok" role="status">Job published. It now shows on the board.</p>
+    </form>
+  </aside>
+</div>
+<dialog id="dlg" aria-label="My Account">
+  <button class="x" id="dx" type="button" aria-label="Close">&times;</button>
+  <div data-pane="login"><h3>Login</h3>
+    <form id="lf" class="cform"><input id="le" type="email" placeholder="E-mail" aria-label="E-mail" required><input type="password" placeholder="Password" aria-label="Password" required>
+      <button class="btn b-navy" type="submit">Login</button><p class="note">Sign in securely with your Kofkro LMIS account.</p></form></div>
+  <div data-pane="account"><h3>My Account</h3>
+    <p id="out">You are not signed in.</p><p id="in" hidden>Signed in as <b id="who"></b></p>
+    <button class="btn b-navy" id="goin" type="button">Login</button><button class="btn b-navy" id="lo" type="button" hidden>Log out</button></div>
+  <div data-pane="cart"><h3>Cart</h3><p>Your cart is empty.</p></div>
+  <div data-pane="terms"><h3>Terms of use</h3><p>The terms of use will be published here before the site launches.</p></div>
+  <div data-pane="privacy"><h3>Privacy Policy</h3><p>The privacy policy will be published here before the site launches. Account and job data are stored on the LMIS server.</p></div>
+  <div data-pane="checkout"><h3>Checkout</h3><p>There is nothing to check out yet.</p></div>
+</dialog>
+<footer class="foot">
+  <div class="wrap fgrid">
+    <div class="fcol">
+      <p>The Kofkro LMIS connects youth, employers, training providers and the Municipality.</p>
+      <div class="fi"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#1ba9e8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg><span>Kofkro Municipality, Ghana</span></div>
+      <div class="fi"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#1ba9e8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A15 15 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span>+233 00 000 0000</span></div>
+      <div class="fi"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#1ba9e8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="1.5"/><path d="M3 7l9 6 9-6"/></svg><span>info@example.com</span></div>
+    </div>
+    <div class="fcol"><h4>For Candidates</h4>
+      <a href="#jobs" data-filter="">Browse all jobs</a><a href="#jobs" data-filter="Internship">Internships</a><a href="#jobs" data-filter="Apprenticeship">Apprenticeships</a><a href="#youth">Skills and training</a><a href="#alignment">Mentorship</a></div>
+    <div class="fcol"><h4>For Employers</h4>
+      <a href="#post">Post a job</a><a href="#employers">Employer engagement</a><a href="#alignment">Partnership tracking</a><a href="#data">Hiring data</a></div>
+    <div class="fcol"><h4>Newsletter</h4>
+      <p>Get new job and training alerts in your inbox.</p>
+      <form id="nf" class="nl"><input type="email" placeholder="Enter your E-mail" aria-label="Enter your E-mail" required><button type="submit" aria-label="Subscribe"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="1.5"/><path d="M3 7l9 6 9-6"/></svg></button></form>
+      <p class="ok" id="nok" role="status">Thanks for subscribing.</p>
+      <div class="soc fsoc"><a class="fb" href="#" aria-label="Facebook">f</a><a class="tw" href="#" aria-label="Twitter">t</a><a class="gp" href="#" aria-label="Google+">G+</a><a class="in" href="#" aria-label="LinkedIn">in</a></div>
+    </div>
+  </div>
+  <div class="fbar"><div class="wrap">
+    <span>Copyright © 2026 Kofkro LMIS | All rights reserved</span>
+    <span class="fl"><a href="#" data-modal="terms">Terms of use</a><a href="#" data-modal="privacy">Privacy Policy</a><a href="#faq">FAQ</a><a href="#contact">Contact</a><button id="theme" type="button">Switch theme</button></span>
+  </div></div>
+
+</footer>
+<a class="top" id="top" href="#" aria-label="Back to top"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 15l7-7 7 7"/></svg></a>
+<script>
+// Translations: [English, French, Spanish, Italian]. Text not listed here (names, user-posted jobs) stays as written.
+var ROWS = [
+['Language','Langue','Idioma','Lingua'],['My Account','Mon compte','Mi cuenta','Il mio account'],['Cart','Panier','Carrito','Carrello'],
+['Checkout','Paiement','Finalizar compra','Pagamento'],['Login','Connexion','Iniciar sesión','Accedi'],['Home','Accueil','Inicio','Home'],
+['Candidates','Candidats','Candidatos','Candidati'],['Browse all jobs','Parcourir toutes les offres','Ver todos los empleos','Sfoglia tutti i lavori'],
+['Internships','Stages','Prácticas','Tirocini'],['Apprenticeships','Apprentissages','Aprendizajes','Apprendistati'],
+['Skills and training','Compétences et formation','Habilidades y formación','Competenze e formazione'],['Mentorship','Mentorat','Mentoría','Mentorato'],
+['Employers','Employeurs','Empleadores','Datori di lavoro'],['Post a job','Publier une offre','Publicar un empleo','Pubblica un lavoro'],
+['Employer engagement','Engagement des employeurs','Participación de los empleadores','Coinvolgimento dei datori di lavoro'],
+['Partnership tracking','Suivi des partenariats','Seguimiento de alianzas','Monitoraggio delle partnership'],
+['Hiring data','Données de recrutement','Datos de contratación','Dati sulle assunzioni'],['Pages','Pages','Páginas','Pagine'],
+['About the LMIS','À propos du LMIS','Acerca del LMIS','Informazioni sul LMIS'],['About','À propos','Acerca de','Chi siamo'],
+['Purpose','Objectif','Propósito','Scopo'],['Evidence and planning','Données et planification','Evidencia y planificación','Dati e pianificazione'],
+['Project alignment','Alignement du projet','Alineación del proyecto','Allineamento del progetto'],['Help','Aide','Ayuda','Aiuto'],
+['Contact us','Nous contacter','Contáctenos','Contattaci'],['FAQ','FAQ','Preguntas frecuentes','FAQ'],['Updates','Actualités','Novedades','Aggiornamenti'],
+['Job types','Types d\'emploi','Tipos de empleo','Tipi di lavoro'],['Full-time','Temps plein','Tiempo completo','Tempo pieno'],
+['Part-time','Temps partiel','Tiempo parcial','Part-time'],['Announcements','Annonces','Anuncios','Annunci'],
+['Success stories','Histoires de réussite','Historias de éxito','Storie di successo'],['Find jobs','Trouver un emploi','Buscar empleo','Trova lavoro'],
+['+ Post a job','+ Publier une offre','+ Publicar un empleo','+ Pubblica un lavoro'],['Purpose of the LMIS','Objectif du LMIS','Propósito del LMIS','Scopo del LMIS'],
+['For Employers','Pour les employeurs','Para empleadores','Per i datori di lavoro'],
+['Labour Market Information System','Système d\'information sur le marché du travail','Sistema de Información del Mercado Laboral','Sistema informativo sul mercato del lavoro'],
+['Kofkro Municipality, Ghana','Municipalité de Kofkro, Ghana','Municipio de Kofkro, Ghana','Comune di Kofkro, Ghana'],
+['Supported by STAR Ghana','Soutenu par STAR Ghana','Con el apoyo de STAR Ghana','Con il sostegno di STAR Ghana'],
+['Download brief','Télécharger la note','Descargar resumen','Scarica la sintesi'],['Jobs board','Offres d\'emploi','Bolsa de empleo','Bacheca lavoro'],
+['Employers post openings here. Youth browse, search and apply.','Les employeurs publient leurs offres ici. Les jeunes parcourent, recherchent et postulent.','Los empleadores publican vacantes aquí. Los jóvenes exploran, buscan y postulan.','I datori di lavoro pubblicano qui le offerte. I giovani sfogliano, cercano e si candidano.'],
+['All types','Tous les types','Todos los tipos','Tutti i tipi'],['Internship','Stage','Prácticas','Tirocinio'],['Apprenticeship','Apprentissage','Aprendizaje','Apprendistato'],
+['Strengthen youth employability','Renforcer l\'employabilité des jeunes','Fortalecer la empleabilidad juvenil','Rafforzare l\'occupabilità dei giovani'],
+['Map youth skills and competencies','Cartographier les compétences des jeunes','Mapear las habilidades y competencias de los jóvenes','Mappare le competenze dei giovani'],
+['Identify skills gaps','Identifier les lacunes en compétences','Identificar brechas de habilidades','Individuare le lacune di competenze'],
+['Link youth to opportunities','Relier les jeunes aux opportunités','Conectar a los jóvenes con oportunidades','Collegare i giovani alle opportunità'],
+['Training, internships, apprenticeships and jobs','Formations, stages, apprentissages et emplois','Formación, prácticas, aprendizajes y empleos','Formazione, tirocini, apprendistati e lavoro'],
+['Improve local labour market coordination','Améliorer la coordination du marché du travail local','Mejorar la coordinación del mercado laboral local','Migliorare il coordinamento del mercato del lavoro locale'],
+['Connect the key actors','Relier les acteurs clés','Conectar a los actores clave','Collegare gli attori chiave'],
+['Youth, employers, training providers and the Municipality','Jeunes, employeurs, organismes de formation et la Municipalité','Jóvenes, empleadores, proveedores de formación y el Municipio','Giovani, datori di lavoro, enti di formazione e il Comune'],
+['Reduce information asymmetry','Réduire l\'asymétrie d\'information','Reducir la asimetría de información','Ridurre l\'asimmetria informativa'],
+['Between job seekers and employers','Entre demandeurs d\'emploi et employeurs','Entre quienes buscan empleo y los empleadores','Tra chi cerca lavoro e i datori di lavoro'],
+['Facilitate structured employer engagement','Faciliter un engagement structuré des employeurs','Facilitar una participación estructurada de los empleadores','Facilitare un coinvolgimento strutturato dei datori di lavoro'],
+['Enable evidence-based decision making','Permettre des décisions fondées sur les données','Permitir decisiones basadas en evidencia','Consentire decisioni basate sui dati'],
+['Real-time data on:','Données en temps réel sur :','Datos en tiempo real sobre:','Dati in tempo reale su:'],
+['Youth unemployment','Chômage des jeunes','Desempleo juvenil','Disoccupazione giovanile'],['Trends','Tendances','Tendencias','Tendenze'],
+['Sector demand','Demande par secteur','Demanda por sector','Domanda per settore'],['Skills shortages','Pénuries de compétences','Escasez de habilidades','Carenza di competenze'],
+['Placement rates','Taux de placement','Tasas de colocación','Tassi di collocamento'],
+['Inform Municipal planning under Act 936','Éclairer la planification municipale en vertu de la loi 936','Informar la planificación municipal conforme a la Ley 936','Orientare la pianificazione comunale ai sensi della Legge 936'],
+['Support STAR Ghana’s adaptive programming','Soutenir la programmation adaptative de STAR Ghana','Apoyar la programación adaptativa de STAR Ghana','Sostenere la programmazione adattiva di STAR Ghana'],
+['Institutionalize youth engagement','Institutionnaliser l\'engagement des jeunes','Institucionalizar la participación juvenil','Istituzionalizzare il coinvolgimento dei giovani'],
+['Anchor the platform','Ancrer la plateforme','Anclar la plataforma','Ancorare la piattaforma'],
+['Under a Youth Desk or Assembly structure','Au sein d\'un Bureau de la jeunesse ou de l\'Assemblée','Bajo una Oficina de la Juventud o la Asamblea','Presso un Ufficio Giovani o l\'Assemblea'],
+['Ensure sustainability','Assurer la durabilité','Garantizar la sostenibilidad','Garantire la sostenibilità'],
+['Beyond project life','Au-delà de la durée du projet','Más allá de la vida del proyecto','Oltre la durata del progetto'],
+['How the LMIS supports the project','Comment le LMIS soutient le projet','Cómo el LMIS apoya el proyecto','Come il LMIS sostiene il progetto'],
+['Project objective','Objectif du projet','Objetivo del proyecto','Obiettivo del progetto'],['LMIS contribution','Contribution du LMIS','Contribución del LMIS','Contributo del LMIS'],
+['Reduce youth unemployment','Réduire le chômage des jeunes','Reducir el desempleo juvenil','Ridurre la disoccupazione giovanile'],
+['Job matching + internship pipeline','Mise en relation emploi + filière de stages','Emparejamiento laboral + canal de prácticas','Incontro domanda-offerta + percorso di tirocini'],
+['Strengthen skills training','Renforcer la formation aux compétences','Fortalecer la formación en habilidades','Rafforzare la formazione professionale'],
+['Skills gap analysis + training linkage','Analyse des lacunes en compétences + lien avec la formation','Análisis de brechas de habilidades + vínculo con la formación','Analisi delle lacune di competenze + collegamento con la formazione'],
+['Promote mentorship','Promouvoir le mentorat','Promover la mentoría','Promuovere il mentorato'],
+['Digital mentor-youth pairing','Jumelage numérique mentor-jeune','Emparejamiento digital mentor-joven','Abbinamento digitale mentore-giovane'],
+['Enhance public-private collaboration','Renforcer la collaboration public-privé','Mejorar la colaboración público-privada','Rafforzare la collaborazione pubblico-privato'],
+['Employer dashboard + partnership tracking','Tableau de bord employeur + suivi des partenariats','Panel de empleadores + seguimiento de alianzas','Dashboard datori di lavoro + monitoraggio delle partnership'],
+['Strengthen city systems','Renforcer les systèmes de la ville','Fortalecer los sistemas de la ciudad','Rafforzare i sistemi cittadini'],
+['Data ready for integration into Municipal planning and budgeting','Données prêtes à être intégrées à la planification et au budget municipaux','Datos listos para integrarse en la planificación y el presupuesto municipales','Dati pronti per l\'integrazione nella pianificazione e nel bilancio comunali'],
+['Frequently asked questions','Questions fréquentes','Preguntas frecuentes','Domande frequenti'],
+['Who is the LMIS for?','À qui s\'adresse le LMIS ?','¿Para quién es el LMIS?','A chi è rivolto il LMIS?'],
+['Youth, employers, training providers and the Municipality.','Aux jeunes, aux employeurs, aux organismes de formation et à la Municipalité.','Para los jóvenes, los empleadores, los proveedores de formación y el Municipio.','Ai giovani, ai datori di lavoro, agli enti di formazione e al Comune.'],
+['What can youth do on it?','Que peuvent faire les jeunes ?','¿Qué pueden hacer los jóvenes en él?','Cosa possono fare i giovani?'],
+['Map their skills, see skills gaps, and find training, internships, apprenticeships and jobs.','Cartographier leurs compétences, voir leurs lacunes et trouver des formations, stages, apprentissages et emplois.','Mapear sus habilidades, ver brechas y encontrar formación, prácticas, aprendizajes y empleos.','Mappare le proprie competenze, vedere le lacune e trovare formazione, tirocini, apprendistati e lavoro.'],
+['How can employers use it?','Comment les employeurs peuvent-ils l\'utiliser ?','¿Cómo pueden usarlo los empleadores?','Come possono usarlo i datori di lavoro?'],
+['Post jobs and engage with youth in a structured way. An employer dashboard will track partnerships.','Publier des offres et dialoguer avec les jeunes de façon structurée. Un tableau de bord suivra les partenariats.','Publicar empleos y relacionarse con los jóvenes de forma estructurada. Un panel hará seguimiento de las alianzas.','Pubblicare offerte e coinvolgere i giovani in modo strutturato. Una dashboard monitorerà le partnership.'],
+['Who will run it long term?','Qui l\'exploitera à long terme ?','¿Quién lo gestionará a largo plazo?','Chi lo gestirà a lungo termine?'],
+['The plan is to anchor it under a Youth Desk or Assembly structure so it lasts beyond the project.','L\'objectif est de l\'ancrer dans un Bureau de la jeunesse ou l\'Assemblée afin qu\'il dure au-delà du projet.','El plan es anclarlo en una Oficina de la Juventud o la Asamblea para que perdure más allá del proyecto.','L\'idea è ancorarlo a un Ufficio Giovani o all\'Assemblea perché duri oltre il progetto.'],
+['Announcements and success stories','Annonces et histoires de réussite','Anuncios e historias de éxito','Annunci e storie di successo'],
+['No posts yet. Updates from the Youth Desk will appear here.','Aucune publication pour l\'instant. Les actualités du Bureau de la jeunesse apparaîtront ici.','Aún no hay publicaciones. Las novedades de la Oficina de la Juventud aparecerán aquí.','Nessun post per ora. Gli aggiornamenti dell\'Ufficio Giovani appariranno qui.'],
+['Send message','Envoyer le message','Enviar mensaje','Invia messaggio'],
+['Message sent. The LMIS desk will reply by e-mail.','Message envoyé. L\'équipe du LMIS répondra par e-mail.','Mensaje enviado. El equipo del LMIS responderá por correo electrónico.','Messaggio inviato. Il team LMIS risponderà via e-mail.'],
+['Publish job','Publier l\'offre','Publicar empleo','Pubblica lavoro'],
+['Job published. It now shows on the board.','Offre publiée. Elle apparaît maintenant sur le tableau.','Empleo publicado. Ya aparece en la bolsa de empleo.','Lavoro pubblicato. Ora appare in bacheca.'],
+['Kofkro Labour Market Information System','Système d\'information sur le marché du travail de Kofkro','Sistema de Información del Mercado Laboral de Kofkro','Sistema informativo sul mercato del lavoro di Kofkro'],
+['Switch theme','Changer de thème','Cambiar tema','Cambia tema'],
+['Search title, company or skill','Rechercher un titre, une entreprise ou une compétence','Buscar título, empresa o habilidad','Cerca titolo, azienda o competenza'],
+['Your name','Votre nom','Su nombre','Il tuo nome'],['E-mail','E-mail','Correo electrónico','E-mail'],['Message','Message','Mensaje','Messaggio'],
+['Job title','Intitulé du poste','Título del empleo','Titolo del lavoro'],
+['Company or organisation','Entreprise ou organisation','Empresa u organización','Azienda o organizzazione'],
+['Location (e.g. Kofkro)','Lieu (ex. Kofkro)','Ubicación (p. ej. Kofkro)','Luogo (es. Kofkro)'],
+['Pay (optional)','Salaire (facultatif)','Pago (opcional)','Retribuzione (facoltativa)'],
+['Contact e-mail for applicants','E-mail de contact pour les candidats','Correo de contacto para los postulantes','E-mail di contatto per i candidati'],
+['Describe the role and the skills needed','Décrivez le poste et les compétences requises','Describa el puesto y las habilidades necesarias','Descrivi il ruolo e le competenze richieste'],
+['Search jobs','Rechercher des offres','Buscar empleos','Cerca lavori'],['Job type','Type d\'emploi','Tipo de empleo','Tipo di lavoro'],
+['Company','Entreprise','Empresa','Azienda'],['Location','Lieu','Ubicación','Luogo'],['Pay','Salaire','Pago','Retribuzione'],
+['Contact e-mail','E-mail de contact','Correo de contacto','E-mail di contatto'],['Description','Description','Descripción','Descrizione'],
+['Menu','Menu','Menú','Menu'],['Main','Principal','Principal','Principale'],
+['Password','Mot de passe','Contraseña','Password'],['Your cart is empty.','Votre panier est vide.','Su carrito está vacío.','Il carrello è vuoto.'],
+['There is nothing to check out yet.','Rien à régler pour le moment.','Aún no hay nada que pagar.','Non c\'è ancora nulla da pagare.'],
+['You are not signed in.','Vous n\'êtes pas connecté.','No ha iniciado sesión.','Non hai effettuato l\'accesso.'],
+['Signed in as','Connecté en tant que','Sesión iniciada como','Accesso effettuato come'],['Log out','Se déconnecter','Cerrar sesión','Esci'],
+['Demo sign-in: your details stay in this browser only.','Connexion de démonstration : vos données restent dans ce navigateur.','Inicio de sesión de demostración: sus datos permanecen solo en este navegador.','Accesso dimostrativo: i tuoi dati restano solo in questo browser.'],
+['Close','Fermer','Cerrar','Chiudi'],
+['Apply','Postuler','Postular','Candidati'],['Remove','Supprimer','Eliminar','Rimuovi'],['Sample','Exemple','Ejemplo','Esempio'],['Today','Aujourd\'hui','Hoy','Oggi'],
+['1 day ago','Il y a 1 jour','Hace 1 día','1 giorno fa'],['{n} days ago','Il y a {n} jours','Hace {n} días','{n} giorni fa'],
+['job','offre','empleo','lavoro'],['jobs','offres','empleos','lavori'],
+['No jobs match. Clear the search or post the first one.','Aucune offre ne correspond. Effacez la recherche ou publiez la première.','Ningún empleo coincide. Borre la búsqueda o publique el primero.','Nessun lavoro corrisponde. Cancella la ricerca o pubblica il primo.'],
+['Sales Assistant','Assistant commercial','Asistente de ventas','Assistente alle vendite'],
+['Digital Skills Intern','Stagiaire en compétences numériques','Becario de habilidades digitales','Tirocinante in competenze digitali'],
+['Tailoring Apprentice','Apprenti couturier','Aprendiz de sastrería','Apprendista sarto'],['Stipend','Indemnité','Estipendio','Rimborso spese'],
+['Serve customers, track stock and support daily sales. Sample listing.','Servir les clients, suivre les stocks et soutenir les ventes quotidiennes. Offre exemple.','Atender a los clientes, controlar el inventario y apoyar las ventas diarias. Ejemplo de oferta.','Servire i clienti, controllare le scorte e supportare le vendite quotidiane. Annuncio di esempio.'],
+['Help youth register on the LMIS and keep their skills profiles up to date. Sample listing.','Aider les jeunes à s\'inscrire sur le LMIS et à tenir à jour leur profil de compétences. Offre exemple.','Ayudar a los jóvenes a registrarse en el LMIS y mantener actualizados sus perfiles de habilidades. Ejemplo de oferta.','Aiutare i giovani a registrarsi sul LMIS e ad aggiornare i loro profili di competenze. Annuncio di esempio.'],
+['Learn pattern cutting and sewing from an experienced tailor. Sample listing.','Apprendre la coupe et la couture auprès d\'un tailleur expérimenté. Offre exemple.','Aprender patronaje y costura con un sastre experimentado. Ejemplo de oferta.','Imparare taglio e cucito da un sarto esperto. Annuncio di esempio.'],
+['The Kofkro LMIS connects youth, employers, training providers and the Municipality.','Le LMIS de Kofkro relie les jeunes, les employeurs, les organismes de formation et la Municipalité.','El LMIS de Kofkro conecta a los jóvenes, los empleadores, los proveedores de formación y el Municipio.','Il LMIS di Kofkro collega giovani, datori di lavoro, enti di formazione e Comune.'],
+['For Candidates','Pour les candidats','Para candidatos','Per i candidati'],
+['Newsletter','Newsletter','Boletín','Newsletter'],
+['Get new job and training alerts in your inbox.','Recevez les nouvelles offres et formations dans votre boîte mail.','Reciba nuevas ofertas y formaciones en su correo.','Ricevi nuove offerte e formazioni nella tua casella e-mail.'],
+['Enter your E-mail','Entrez votre e-mail','Introduzca su correo','Inserisci la tua e-mail'],
+['Subscribe','S\'abonner','Suscribirse','Iscriviti'],
+['Thanks for subscribing.','Merci pour votre inscription.','Gracias por suscribirse.','Grazie per l\'iscrizione.'],
+['Copyright © 2026 Kofkro LMIS | All rights reserved','Copyright © 2026 Kofkro LMIS | Tous droits réservés','Copyright © 2026 Kofkro LMIS | Todos los derechos reservados','Copyright © 2026 Kofkro LMIS | Tutti i diritti riservati'],
+['Terms of use','Conditions d\'utilisation','Términos de uso','Termini di utilizzo'],
+['Privacy Policy','Politique de confidentialité','Política de privacidad','Informativa sulla privacy'],
+['Contact','Contact','Contacto','Contatti'],
+['Back to top','Haut de page','Volver arriba','Torna su'],
+['The terms of use will be published here before the site launches.','Les conditions d\'utilisation seront publiées ici avant le lancement du site.','Los términos de uso se publicarán aquí antes del lanzamiento del sitio.','I termini di utilizzo saranno pubblicati qui prima del lancio del sito.'],
+['The privacy policy will be published here before the site launches. In this demo, jobs, language and sign-in details are saved only in your own browser.','La politique de confidentialité sera publiée ici avant le lancement du site. Dans cette démo, les offres, la langue et les données de connexion sont enregistrées uniquement dans votre navigateur.','La política de privacidad se publicará aquí antes del lanzamiento del sitio. En esta demostración, los empleos, el idioma y los datos de inicio de sesión se guardan solo en su navegador.','L\'informativa sulla privacy sarà pubblicata qui prima del lancio del sito. In questa demo, offerte, lingua e dati di accesso sono salvati solo nel tuo browser.']
+];
+var D = {}, IDX = {fr:1, es:2, it:3}, lang = 'en';
+ROWS.forEach(function (r) { D[r[0]] = r; });
+try { lang = localStorage.getItem('kofkro-lang') || 'en'; } catch (e) {}
+if (!IDX[lang]) lang = 'en';
+
+// t('English text') returns the text in the chosen language, or the original if there is no translation
+function t(s) { var d = D[s]; return (lang === 'en' || !d) ? s : (d[IDX[lang]] || s); }
+
+function setLang(l) {
+  lang = IDX[l] ? l : 'en';
+  try { localStorage.setItem('kofkro-lang', lang); } catch (e) {}
+  document.documentElement.lang = lang;
+  var w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, { acceptNode: function (n) {
+    var p = n.parentNode;
+    if (!p || /^(SCRIPT|STYLE)$/.test(p.nodeName) || p.closest('#jobs-list')) return NodeFilter.FILTER_REJECT;
+    return n.nodeValue.trim() ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+  } });
+  var n;
+  while ((n = w.nextNode())) {
+    if (n._en === undefined) n._en = n.nodeValue;
+    var core = n._en.trim();
+    n.nodeValue = n._en.replace(core, function () { return t(core); });
+  }
+  document.querySelectorAll('[placeholder],[aria-label]').forEach(function (el) {
+    ['placeholder', 'aria-label'].forEach(function (a) {
+      if (!el.hasAttribute(a)) return;
+      el['_' + a] = el['_' + a] || el.getAttribute(a);
+      el.setAttribute(a, t(el['_' + a]));
+    });
+  });
+  document.querySelectorAll('[data-lang]').forEach(function (a) { a.classList.toggle('sel', a.getAttribute('data-lang') === lang); });
+  if (typeof render === 'function') render();
+}
+</script>
+
+<script>
+ // Jobs are stored on the server/database and shared between visitors.
+var jobs = [];
+var currentUser = null;
+
+async function loadJobs(){
+  try{
+    var r = await fetch('/api/jobs', { credentials:'include' });
+    var data = await r.json();
+    if(!r.ok) throw new Error(data.error || 'Could not load jobs.');
+    jobs = data.jobs || [];
+    render();
+  }catch(e){
+    console.error(e);
+    var box = document.getElementById('jobs-list');
+    if(box) box.innerHTML = '<div class="empty">Unable to load jobs right now. Please refresh the page.</div>';
+  }
+}
+
+async function loadCurrentUser(){
+  try{
+    var r = await fetch('/api/auth/me', { credentials:'include' });
+    if(!r.ok){ currentUser = null; }
+    else {
+      var data = await r.json();
+      currentUser = data.user || null;
+    }
+  }catch(e){
+    currentUser = null;
+  }
+  updateAccountUI();
+}
+
+function updateAccountUI(){
+  var out = document.getElementById('out');
+  var inside = document.getElementById('in');
+  var goin = document.getElementById('goin');
+  var lo = document.getElementById('lo');
+  var who = document.getElementById('who');
+
+  if(!out || !inside || !goin || !lo || !who) return;
+
+  out.hidden = !!currentUser;
+  inside.hidden = !currentUser;
+  goin.hidden = !!currentUser;
+  lo.hidden = !currentUser;
+  who.textContent = currentUser ? (currentUser.name || currentUser.email) : '';
+}
+
+function esc(s){ var d=document.createElement('div'); d.textContent=s; return d.innerHTML; }
+function ago(ts){ var d=Math.floor((Date.now()-ts)/86400000); return d<1?t('Today'):d===1?t('1 day ago'):t('{n} days ago').replace('{n}',d); }
+
+function render(){
+  var q=document.getElementById('q').value.toLowerCase(), ft=document.getElementById('ft').value;
+  var list=jobs.filter(function(j){
+    return (!ft||j.type===ft) && (!q||(j.title+' '+j.co+' '+j.desc+' '+j.loc).toLowerCase().indexOf(q)>-1);
+  }).sort(function(a,b){return b.t-a.t;});
+  document.getElementById('count').textContent = list.length + ' ' + t(list.length===1?'job':'jobs');
+  var box=document.getElementById('jobs-list');
+  if(!list.length){ box.innerHTML='<div class="empty">'+t('No jobs match. Clear the search or post the first one.')+'</div>'; return; }
+  box.innerHTML=list.map(function(j){
+    var own = !!currentUser && Number(j.userId) === Number(currentUser.id);
+    return '<article class="job"><div class="lg" aria-hidden="true">'+esc(j.co.charAt(0).toUpperCase())+'</div>'+
+      '<div><h4>'+esc(t(j.title))+'</h4><div class="co">'+esc(j.co)+' &middot; '+esc(j.loc)+'</div>'+
+      '<div class="pills"><span class="pill sm">'+esc(t(j.type))+'</span>'+(j.pay?'<span class="pill">'+esc(t(j.pay))+'</span>':'')+'<span class="pill">'+ago(j.t)+'</span>'+(j.sample?'<span class="pill">'+t('Sample')+'</span>':'')+'</div>'+
+      '<p class="ds">'+esc(t(j.desc))+'</p></div>'+
+      '<div class="jact"><a class="btn b-navy" href="mailto:'+encodeURIComponent(j.mail)+'?subject='+encodeURIComponent('Application: '+j.title)+'">'+t('Apply')+'</a>'+
+      (own?'<button class="gh" data-del="'+j.id+'" type="button">'+t('Remove')+'</button>':'')+'</div></article>';
+  }).join('');
+}
+
+document.getElementById('q').addEventListener('input', render);
+document.getElementById('ft').addEventListener('change', render);
+document.getElementById('jobs-list').addEventListener('click', async function(e){
+  var id=e.target.getAttribute('data-del');
+  if(!id) return;
+
+  if(!currentUser){
+    window.location.href='login.html';
+    return;
+  }
+
+  try{
+    var r = await fetch('/api/jobs/' + encodeURIComponent(id), {
+      method:'DELETE',
+      credentials:'include'
+    });
+    var data = await r.json();
+    if(!r.ok) throw new Error(data.error || 'Unable to remove the job.');
+    await loadJobs();
+  }catch(err){
+    alert(err.message);
+  }
+});
+document.getElementById('pf').addEventListener('submit', async function(e){
+  e.preventDefault();
+
+  if(!currentUser){
+    window.location.href='login.html';
+    return;
+  }
+
+  var g=function(i){return document.getElementById(i).value.trim();};
+
+  var job={
+    title:g('f-title'),
+    co:g('f-co'),
+    loc:g('f-loc'),
+    type:g('f-type'),
+    pay:g('f-pay'),
+    mail:g('f-mail'),
+    desc:g('f-desc')
+  };
+
+  var button = e.target.querySelector('button[type="submit"]');
+  button.disabled = true;
+
+  try{
+    var response = await fetch('/api/jobs', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      credentials:'include',
+      body:JSON.stringify(job)
+    });
+
+    var data = await response.json();
+
+    if(!response.ok){
+      if(response.status === 401){
+        window.location.href='login.html';
+        return;
+      }
+      throw new Error(data.error || 'Unable to publish the job.');
+    }
+
+    e.target.reset();
+    await loadJobs();
+
+    var ok=document.getElementById('ok');
+    ok.style.display='block';
+    setTimeout(function(){ok.style.display='none';},4000);
+    document.getElementById('jobs').scrollIntoView({behavior:'smooth'});
+  }catch(err){
+    alert(err.message);
+  }finally{
+    button.disabled = false;
+  }
+});
+
+document.getElementById('theme').addEventListener('click', function(){
+  var r=document.documentElement;
+  var dark=r.dataset.theme ? r.dataset.theme==='dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  r.dataset.theme=dark?'light':'dark';
+});
+loadCurrentUser().then(loadJobs);
+
+// ---- Header menu: hover on desktop, tap on mobile, Esc and outside click close it
+var nav = document.getElementById('menu'), burger = document.getElementById('burger'), hdr = document.querySelector('header.main');
+function closeAll(){
+  document.querySelectorAll('.has.open').forEach(function(h){ h.classList.remove('open'); h.querySelector('.tr').setAttribute('aria-expanded','false'); });
+}
+document.querySelectorAll('.has>.tr').forEach(function(btn){
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var h = btn.parentNode, was = h.classList.contains('open');
+    closeAll();
+    if(!was){ h.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+  });
+});
+document.addEventListener('click', function(e){ if(!e.target.closest('.has')) closeAll(); });
+document.addEventListener('keydown', function(e){ if(e.key==='Escape'){ closeAll(); nav.classList.remove('show'); burger.setAttribute('aria-expanded','false'); } });
+burger.addEventListener('click', function(){ var o = nav.classList.toggle('show'); burger.setAttribute('aria-expanded', o); });
+document.querySelectorAll('nav.menu a').forEach(function(a){
+  a.addEventListener('click', function(){
+    closeAll(); nav.classList.remove('show'); burger.setAttribute('aria-expanded','false');
+    hdr.classList.add('closing'); setTimeout(function(){ hdr.classList.remove('closing'); }, 500);
+    if(a.getAttribute('data-filter') !== null){
+      document.getElementById('ft').value = a.getAttribute('data-filter');
+      document.getElementById('q').value = '';
+      render();
+    }
+  });
+});
+// Contact form
+document.getElementById('cf').addEventListener('submit', function(e){
+  e.preventDefault(); document.getElementById('cok').style.display='block'; e.target.reset();
+});
+
+// ---- Top bar: language and account dropdowns
+var topbar = document.querySelector('.topbar');
+function closeTb(){ document.querySelectorAll('.tb.open').forEach(function(x){ x.classList.remove('open'); x.querySelector('.tbtn').setAttribute('aria-expanded','false'); }); }
+document.querySelectorAll('.tbtn').forEach(function(btn){
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var box = btn.parentNode, was = box.classList.contains('open');
+    closeTb(); closeAll();
+    if(!was){ box.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+  });
+});
+document.addEventListener('click', function(e){ if(!e.target.closest('.tb')) closeTb(); });
+document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeTb(); });
+function afterPick(){ closeTb(); topbar.classList.add('closing'); setTimeout(function(){ topbar.classList.remove('closing'); }, 500); }
+
+document.querySelectorAll('[data-lang]').forEach(function(a){
+  a.addEventListener('click', function(e){ e.preventDefault(); setLang(a.getAttribute('data-lang')); afterPick(); });
+});
+
+// ---- Account dialog (Cart, Checkout, My Account, Login)
+var dlg = document.getElementById('dlg');
+function user(){ return currentUser; }
+
+function pane(name){
+  if(name==='login'){
+    window.location.href='login.html';
+    return;
+  }
+
+  dlg.querySelectorAll('[data-pane]').forEach(function(p){
+    p.classList.toggle('show', p.getAttribute('data-pane')===name);
+  });
+
+  updateAccountUI();
+
+  if(!dlg.open) dlg.showModal();
+}
+
+document.querySelectorAll('[data-modal]').forEach(function(a){
+  a.addEventListener('click', function(e){
+    e.preventDefault();
+    afterPick();
+    pane(a.getAttribute('data-modal'));
+  });
+});
+
+document.getElementById('dx').addEventListener('click', function(){ dlg.close(); });
+dlg.addEventListener('click', function(e){ if(e.target===dlg) dlg.close(); });
+document.getElementById('goin').addEventListener('click', function(){ window.location.href='login.html'; });
+
+document.getElementById('lf').addEventListener('submit', function(e){
+  e.preventDefault();
+  window.location.href='login.html';
+});
+
+document.getElementById('lo').addEventListener('click', async function(){
+  try{
+    var r = await fetch('/api/auth/logout', {
+      method:'POST',
+      credentials:'include'
+    });
+    if(!r.ok) throw new Error('Unable to log out.');
+    currentUser = null;
+    updateAccountUI();
+    pane('account');
+    await loadJobs();
+  }catch(err){
+    alert(err.message);
+  }
+});
+
+// Apply the saved language on load
+if(lang !== 'en') setLang(lang); else document.querySelector('[data-lang="en"]').classList.add('sel');
+
+// ---- Footer: filter links, newsletter, back-to-top
+document.querySelectorAll('footer a[data-filter]').forEach(function(a){
+  a.addEventListener('click', function(){
+    document.getElementById('ft').value = a.getAttribute('data-filter');
+    document.getElementById('q').value = '';
+    render();
+  });
+});
+document.getElementById('nf').addEventListener('submit', function(e){
+  e.preventDefault(); e.target.reset();
+  var ok = document.getElementById('nok'); ok.style.display = 'block';
+  setTimeout(function(){ ok.style.display = 'none'; }, 4000);
+});
+var topBtn = document.getElementById('top');
+window.addEventListener('scroll', function(){ topBtn.classList.toggle('show', window.scrollY > 400); });
+topBtn.addEventListener('click', function(e){ e.preventDefault(); window.scrollTo({top:0, behavior:'smooth'}); }); 
+</script>
+</body></html>
+
+
+
